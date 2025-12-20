@@ -1,0 +1,11 @@
+```toml
+[package]
+name = "meta-contexts"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+
+[dependencies]
+interfaces = { path = "../../interfaces" }
+context-accents = { path = ".." }
+```

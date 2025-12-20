@@ -1,0 +1,15 @@
+```toml
+[package]
+name = "synthetic-mind-core"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+
+[dependencies]
+# Без зависимостей по умолчанию
+# Модули используют только базовые типы
+
+[features]
+default = []
+std = []
+```

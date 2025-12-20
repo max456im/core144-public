@@ -1,0 +1,15 @@
+```toml
+[package]
+name = "technical-evangelist"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+
+[dependencies]
+synthetic-mind-core = { path = "../../core" }
+language-module = { path = "../../language-module" }
+meta-ontology-module = { path = "../../meta-ontology-module" }
+context-accents = { path = "../../gpl-modules/context-accents" }
+social-rules-emergence = { path = "../../gpl-modules/social-rules-emergence" }
+meta-contexts = { path = "../../gpl-modules/meta-contexts" }
+```
