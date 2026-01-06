@@ -1,0 +1,35 @@
+[package]
+name = "core144-public"
+version = "0.1.0"
+edition = "2021"
+authors = ["Maksim Zapevalov <zap3valov@gmail.com>"]
+description = "Центральная вычислительная машина синтетического разума. Обрабатывает онтологические профили и генерирует onto16-проекции."
+license = "MPL-2.0"
+repository = "https://github.com/max456im/core144-public"
+homepage = "https://github.com/max456im/core144-public"
+documentation = "https://github.com/max456im/core144-public/docs"
+readme = "README.md"
+keywords = ["synthetic-mind", "ontology", "onto16", "core144", "reasoning-engine"]
+categories = ["algorithms", "science", "wasm"]
+
+# Запрет на автоматическую публикацию без явного указания
+publish = false
+
+[dependencies]
+# Минимальные зависимости — только для парсинга YAML/TXT при необходимости
+# (реальный парсинг делегируется вызывающей стороне; core144 принимает &[u8])
+serde = { version = "1.0", features = ["derive"], optional = true }
+serde_yaml = { version = "0.9", optional = true }
+
+[features]
+default = []
+# Опциональная поддержка deserialization из YAML через serde
+yaml-parsing = ["serde", "serde_yaml"]
+
+[lib]
+name = "core144_public"
+path = "src/lib.rs"
+crate-type = ["rlib", "cdylib"]  # Поддержка WASM и нативных библиотек
+
+[package.metadata.docs.rs]
+features = ["yaml-parsing"]
